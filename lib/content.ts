@@ -10,8 +10,7 @@ export const profile = {
   bio: "Saya suka mempelajari hal-hal baru, terutama di bidang web development, database system, software engineering, dan quality assurance (QA). Saya memiliki minat untuk mengembangkan aplikasi yang efisien, fungsional, dan mudah digunakan, serta terus meningkatkan keterampilan teknis saya melalui pembelajaran dan praktik langsung.",
   cvUrl:
     "https://drive.google.com/file/d/13XBgbxpgE4yOTrhh2pJWrQQsWYKQMgUy/view?usp=sharing",
-  photo:
-    "https://big-com18.github.io/Cv_Billy/CV-Home/image/FOTO%20BILLY.jpg",
+  photo: "/images/foto-billy.jpg",
 };
 
 export const education = [
@@ -43,8 +42,7 @@ export const projects = [
     title: "Membuat Aplikasi",
     role: "Front-End",
     desc: "Proyek ini dibuat untuk project tugas akhir di mata kuliah saya.",
-    image:
-      "https://big-com18.github.io/Cv_Billy/CV-Home/image/Porto_KEL10_Rancar_IlkomB.jpg",
+    image: "/images/project-rancar.jpg",
     link: "https://big-com18.github.io/Cv_Billy/CV-Home/",
   },
   {
@@ -53,7 +51,7 @@ export const projects = [
     role: "Sound and Assets",
     desc:
       "Membantu membuat game, role saya mencari backsound dan ambience yang sesuai dengan kondisi di dalam game.",
-    image: "https://big-com18.github.io/Cv_Billy/CV-Home/image/disavoved.jpeg",
+    image: "/images/project-disavowed.jpeg",
     link: "https://vntrydev.itch.io/disavowed",
   },
   {
@@ -62,7 +60,7 @@ export const projects = [
     role: "Fullstack",
     desc:
       "Dalam salah satu kursus yang saya ikuti untuk memperluas pengetahuan, saya diminta membuat sebuah website sederhana sebagai proyek akhir.",
-    image: "https://big-com18.github.io/Cv_Billy/CV-Home/image/bmi.jpg",
+    image: "/images/project-bmi.jpg",
     link: "https://big-com18.github.io/BMI-project/index.html",
   },
   {
@@ -71,8 +69,7 @@ export const projects = [
     role: "JavaScript",
     desc:
       "Proyek pembuatan Bot WhatsApp berbasis Node.js (Baileys) dengan fitur integrasi panel admin untuk kontrol sistem dan manajemen pesan otomatis.",
-    image:
-      "https://big-com18.github.io/Cv_Billy/CV-Home/image/BotWA.jpg",
+    image: "/images/project-botwa.jpg",
     link: "https://big-com18.github.io/BMI-project/index.html",
   },
 ];
@@ -82,8 +79,7 @@ export const certificates = [
     title: "Code Generations and Optimization",
     issuer: "Hacktiv8 Indonesia (bersama IBM SkillsBuild)",
     period: "5 — 7 Agustus 2025",
-    image:
-      "https://big-com18.github.io/Cv_Billy/CV-Home/image/Code%20Generations%20and%20Optimization%20-%20Billy%20Andras%20(1)_page-0001.jpg",
+    image: "/images/sertifikat-code-gen.jpg",
     link: "https://drive.google.com/file/d/10FdJJLK4Ow7kouXaLp6oCEoDwhd87Qvs/view?usp=drive_link",
   },
   {
@@ -91,23 +87,21 @@ export const certificates = [
     issuer: "EF Standard English Test (EF SET)",
     period: "02 Januari 2026",
     extra: "Score: 61/100 — Reading: C2 Proficient, Listening: A2 Elementary",
-    image:
-      "https://big-com18.github.io/Cv_Billy/CV-Home/image/EF%20SET%20Certificate_page-0001.jpg",
+    image: "/images/sertifikat-efset.jpg",
     link: "https://cert.efset.org/HLaudm",
   },
   {
     title: "Front End Developer",
     issuer: "PT Benih Inovasi Teknologi",
     period: "14 Januari — 14 April 2026",
-    image:
-      "https://big-com18.github.io/Cv_Billy/CV-Home/image/Billy%20Andreas%20-%20Front%20End%20Developer.png",
+    image: "/images/sertifikat-fe-dev.png",
     link: "https://drive.google.com/file/d/1klw-0EzxfqPtmdbywiHJM8CE6c8G_esQ/view?usp=sharing",
   },
   {
     title: "Coming Soon",
     issuer: "Sertifikat selanjutnya akan segera ditambahkan.",
     period: "",
-    image: "https://big-com18.github.io/Cv_Billy/CV-Home/image/soon.jpg",
+    image: "/images/sertifikat-soon.jpg",
     link: "",
   },
 ];
