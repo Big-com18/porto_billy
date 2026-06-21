@@ -1,26 +1,134 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gutter-w: 3.25rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: #1b1815;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #e8a33d;
+  color: #1b1815;
+}
+
+/* thin amber scrollbar to echo an editor minimap */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1b1815;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a352e;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b97f2c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* visible keyboard focus ring, amber, consistent across the site */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #e8a33d;
+  outline-offset: 3px;
+}
+
+/* code-editor "file" wrapper: gutter + content */
+.file-block {
+  position: relative;
+  padding-left: var(--gutter-w);
+}
+
+.line-no {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--gutter-w);
+  text-align: right;
+  padding-right: 1rem;
+  color: #5b5650;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.85rem;
+  user-select: none;
+}
+
+.blink-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 4px;
+  background: #e8a33d;
+  vertical-align: -0.15em;
+  animation: blink 1.1s steps(2, jump-none) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.bracket {
+  color: #6f6a62;
+}
+
+/* decorative editor line numbers, one per top-level block */
+.codeframe {
+  counter-reset: line;
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.codeframe > * {
+  counter-increment: line;
+  position: relative;
+}
+
+.codeframe > *::before {
+  content: counter(line, decimal-leading-zero);
+  position: absolute;
+  left: -3.5rem;
+  top: 0.3em;
+  width: 2.75rem;
+  text-align: right;
+  color: #5b5650;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .codeframe {
+    padding-left: 2.5rem;
+  }
+  .codeframe > *::before {
+    left: -2.5rem;
+    width: 2rem;
+    font-size: 0.62rem;
+  }
 }
