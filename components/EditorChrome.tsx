@@ -104,7 +104,7 @@ export default function EditorChrome({
           <span className="h-2.5 w-2.5 rounded-full bg-amber/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-teal/70" />
           <span className="ml-3 hidden font-mono text-xs text-muted sm:inline">
-            billy-andreas — portfolio.tsx — Visual Studio Code
+            Billy Andreas — Visual Studio Code
           </span>
         </div>
         <a
@@ -122,9 +122,7 @@ export default function EditorChrome({
       <div className="flex flex-1">
         {/* sidebar: file explorer */}
         <aside
-          className={`fixed inset-y-0 left-0 z-30 w-64 shrink-0 transform border-r border-rule bg-panel pt-[49px] transition-transform duration-200 sm:static sm:translate-x-0 sm:pt-0 ${
-            sidebarOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`fixed inset-y-0 left-0 z-30 w-64 shrink-0 transform overflow-y-auto border-r border-rule bg-panel pt-[49px] transition-transform duration-200 sm:sticky sm:top-[49px] sm:h-[calc(100vh-49px)] sm:translate-x-0 sm:pt-0`}
         >
           <div className="px-4 py-5">
             <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
@@ -194,7 +192,7 @@ export default function EditorChrome({
         {/* main editor pane */}
         <div className="flex min-h-screen flex-1 flex-col sm:pl-0">
           {/* tab bar */}
-          <nav className="sticky top-[49px] z-20 flex overflow-x-auto border-b border-rule bg-ink/95 backdrop-blur sm:top-0">
+          <nav className="sticky top-[49px] z-20 flex overflow-x-auto border-b border-rule bg-ink/95 backdrop-blur">
             {FILES.filter((f) => !f.external).map((f) => {
               const isActive = f.id === active;
               return (
