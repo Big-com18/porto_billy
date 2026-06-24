@@ -8,9 +8,6 @@ Redesign portofolio dengan tema **"developer console"** — terinspirasi dari ta
 npm install
 npm run dev
 ```
-
-Buka [http://localhost:3000](http://localhost:3000).
-
 ## Build production
 
 ```bash

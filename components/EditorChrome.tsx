@@ -90,6 +90,7 @@ export default function EditorChrome({
       {/* top title bar */}
       <header className="sticky top-0 z-40 flex items-center justify-between border-b border-rule bg-panel/95 px-3 py-2 backdrop-blur sm:px-5">
         <div className="flex items-center gap-2">
+          <img />
           <button
             onClick={() => setSidebarOpen((s) => !s)}
             aria-label="Buka navigasi"

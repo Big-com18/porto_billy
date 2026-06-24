@@ -33,7 +33,7 @@ export const education = [
 export const skills = {
   "Bahasa Pemrograman": ["JavaScript", "HTML5", "CSS3", "C++"],
   "Frameworks & Libraries": ["React.js", "Tailwind CSS", "Next.js"],
-  "Tools & Others": ["Git & GitHub", "Figma", "VS Code", "SQL Management Studio"],
+  "Tools & Others": ["Git & GitHub", "Figma", "VS Code", "SQL Management Studio", "Jira"],
 };
 
 export const projects = [
@@ -71,6 +71,15 @@ export const projects = [
       "Proyek pembuatan Bot WhatsApp berbasis Node.js (Baileys) dengan fitur integrasi panel admin untuk kontrol sistem dan manajemen pesan otomatis.",
     image: "/images/project-botwa.jpg",
     link: "https://big-com18.github.io/BMI-project/index.html",
+  },
+  {
+    id: "Project Management Student",
+    title: "Project Management Student",
+    role: "Front-End",
+    desc:
+      "Project UTS Mata Kuliah Mobile, Membuat Aplikasi Sederhana dengan menggunakan bahasa pemrograman Dart dan framework Flutter.",
+    image: "/images/stundent.png",
+    link: "https://github.com/Big-com18/uts_project_mobile",
   },
 ];
 
