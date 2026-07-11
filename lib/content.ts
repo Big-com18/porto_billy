@@ -73,13 +73,13 @@ export const projects = [
     link: "https://big-com18.github.io/BMI-project/index.html",
   },
   {
-    id: "Project Management Student",
+    id: "Project Apps Film",
     title: "Project Management Student",
     role: "Front-End",
     desc:
       "Project UTS Mata Kuliah Mobile, Membuat Aplikasi Sederhana dengan menggunakan bahasa pemrograman Dart dan framework Flutter.",
     image: "/images/stundent.png",
-    link: "https://github.com/Big-com18/uts_project_mobile",
+    link: "https://github.com/Big-com18/uas_project_mobile",
   },
 ];
 
