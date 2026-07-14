@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 type FileEntry = {
   id: string;
@@ -54,28 +54,44 @@ export default function EditorChrome({
 }) {
   const [active, setActive] = useState("home");
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const sectionsRef = useRef<Record<string, IntersectionObserverEntry>>({});
 
   useEffect(() => {
     const ids = FILES.filter((f) => !f.external).map((f) => f.id);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          sectionsRef.current[entry.target.id] = entry;
+    // Garis acuan navbar: sticky header (~49px) + tab bar (~41px)
+    const OFFSET = 100;
+
+    const updateActive = () => {
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        // Section dianggap aktif kalau bagian atasnya sudah lewat garis offset
+        if (top - OFFSET <= 0) {
+          current = id;
+        }
+      }
+      setActive(current);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateActive();
+          ticking = false;
         });
-        const visible = ids
-          .map((id) => sectionsRef.current[id])
-          .filter((e) => e && e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActive(visible[0].target.id);
-      },
-      { threshold: [0.2, 0.4, 0.6], rootMargin: "-15% 0px -40% 0px" }
-    );
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
+        ticking = true;
+      }
+    };
+
+    updateActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   const goTo = (id: string) => {

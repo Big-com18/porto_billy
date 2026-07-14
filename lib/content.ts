@@ -74,12 +74,30 @@ export const projects = [
   },
   {
     id: "Project Apps Film",
-    title: "Project Management Student",
-    role: "Front-End",
+    title: "Project Booking Film",
+    role: "Front-End and back-end",
     desc:
-      "Project UTS Mata Kuliah Mobile, Membuat Aplikasi Sederhana dengan menggunakan bahasa pemrograman Dart dan framework Flutter.",
-    image: "/images/stundent.png",
+      "Project UAS Mata Kuliah Mobile, Membuat Aplikasi Sederhana dengan menggunakan bahasa pemrograman Dart dan framework Flutter.",
+    image: "/images/cinemas.png",
     link: "https://github.com/Big-com18/uas_project_mobile",
+  }, 
+  {
+    id: "Project UI/UX",
+    title: "Project Membuat Aplikasi Translink",
+    role: "UI/UX",
+    desc:
+      "Project UAS Mata Kuliah UI/UX, Membuat Aplikasi Sederhana dengan menggunakan Figma.",
+    image: "/images/translink.png",
+    link: "https://www.figma.com/design/xKuMipoW5Eo9xhojojKjJ3/Home?node-id=756-436&t=Y8yIIlaKJKb096lk-1",
+  },
+  {
+    id: "Project AI",
+    title: "Project Membuat Web Sederhana Untuk petani apel",
+    role: "-",
+    desc:
+      "Project AI Disini saya membuat sebuah website sederhana untuk petani apel, website ini dibuat dengan menggunakan bahasa pemrograman Python ",
+    image: "/images/appel.png",
+    link: "https://uas-ai03-kelompok1.streamlit.app/",
   },
 ];
 
