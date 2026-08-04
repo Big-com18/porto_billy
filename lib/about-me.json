@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bio",
+    "title": "Bio",
+    "content": "Billy adalah mahasiswa Cakrawala University dengan minat di software development dan data. Fokus utama di mobile development (Flutter), web development (Next.js/React), machine learning, dan aplikasi data/finance."
+  },
+  {
+    "id": "project-ml-uas",
+    "title": "Project: Machine Learning Final Project (ml_uas)",
+    "content": "Project tugas akhir menggunakan XGBoost dan FVOA (feature/hyperparameter optimization) di enam dataset: Heart Failure Prediction, Loan Approval, Telco Customer Churn, Airline Passenger Satisfaction, Water Quality, dan American Bankruptcy. Kode dikonversi dari script Python lokal menjadi satu notebook Google Colab (UAS_ML_XGBoost_FVOA.ipynb) dengan plot inline dan data dari GitHub. Repo: Big-com18/ml_uas."
+  },
+  {
+    "id": "project-mie-gacoan",
+    "title": "Project: Mie Gacoan App",
+    "content": "Aplikasi mobile Flutter (mie_gacoan_app) dengan custom bottom navigation bar. Menggunakan go_router dengan StatefulShellRoute.indexedStack untuk routing antar tab, plus styling dan penyelesaian berbagai isu struktural navigasi."
+  },
+  {
+    "id": "project-portfolio-web",
+    "title": "Project: Portfolio Website",
+    "content": "Website portofolio pribadi dibangun dengan Next.js/React. Salah satu tantangan teknis yang diselesaikan adalah bug scrollspy/navbar highlighting, yang awalnya pakai IntersectionObserver lalu diganti ke scroll event listener dengan requestAnimationFrame throttling untuk performa lebih baik."
+  },
+  {
+    "id": "project-stock-data",
+    "title": "Project: Stock Ownership Data App (in progress)",
+    "content": "Sedang eksplorasi pengembangan aplikasi data kepemilikan saham, meneliti sumber data untuk pasar Indonesia (IDX) dan Amerika (US), termasuk data broker-level, KSEI, keterbukaan informasi OJK, SEC EDGAR, dan API pihak ketiga."
+  },
+  {
+    "id": "skills",
+    "title": "Skills",
+    "content": "Flutter (mobile), Next.js/React (web), Python untuk machine learning (XGBoost, hyperparameter optimization), Google Colab, Git/GitHub, serta ketertarikan pada data dan aplikasi finansial."
+  }
+]
