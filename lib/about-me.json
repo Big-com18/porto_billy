@@ -1,13 +1,68 @@
 [
   {
     "id": "bio",
-    "title": "Bio",
-    "content": "Billy adalah mahasiswa Cakrawala University dengan minat di software development dan data. Fokus utama di mobile development (Flutter), web development (Next.js/React), machine learning, dan aplikasi data/finance."
+    "title": "Profil Singkat",
+    "content": "Billy Andreas adalah mahasiswa Ilmu Komputer semester 4 di Universitas Cakrawala, dengan pengalaman praktis sebagai Web Developer. Ia memiliki keahlian ganda dalam pengembangan Front-End dan Quality Assurance (QA). Selain membangun fitur, Billy juga terbiasa melakukan pengujian ketat (testing) untuk memastikan aplikasi berjalan optimal, dengan perhatian tinggi terhadap detail demi menciptakan produk yang presisi, fungsional, dan bebas bug. Ia aktif mendalami pengembangan web (front-end maupun back-end), basis data, serta Quality Assurance/Quality Control (QA/QC)."
+  },
+  {
+    "id": "kontak",
+    "title": "Kontak",
+    "content": "Email: billyandreas441@gmail.com. Nomor telepon: +6283897979495. LinkedIn: Billy Andreas. Social media (Instagram): bill.and18. Website portofolio: https://porto-billy.vercel.app/."
+  },
+  {
+    "id": "pendidikan-cakrawala",
+    "title": "Pendidikan: Universitas Cakrawala",
+    "content": "Billy kuliah di Universitas Cakrawala jurusan Ilmu Komputer, saat ini semester 4. Semester 1: menguasai logika dasar algoritma, perancangan antarmuka pengguna (UI/UX Design), dan dasar jaringan (IPK 3.85). Semester 2: membangun tampilan website interaktif (frontend), struktur data, dan pemrograman berorientasi objek (IPK 3.89). Semester 3: fokus pada pengembangan aplikasi web skala lanjut (fullstack) dan manajemen basis data kompleks (IPK 3.79)."
+  },
+  {
+    "id": "pendidikan-sma",
+    "title": "Pendidikan: SMAN 24 Jakarta",
+    "content": "Billy merupakan lulusan SMAN 24 Jakarta (2021) jurusan IPA. Ia aktif dalam organisasi Rohkris dan pernah menjadi ketua dalam salah satu event Rohkris. Billy menjadi Eligible Student di urutan ke-30 dari satu angkatan sekolah."
+  },
+  {
+    "id": "skills",
+    "title": "Keterampilan",
+    "content": "Kemampuan utama Billy meliputi: analisis & pemecahan masalah (mampu merancang konsep sistem kompleks seperti system design), berorientasi detail (teliti dalam quality assurance dan pengecekan kode), komunikasi & adaptasi cepat dengan tim teknis, manajemen waktu antara akademik dan pengembangan skill mandiri, kuat dalam logika pemecahan masalah teknis, serta disiplin dan tepat waktu. Soft skill lain: critical thinking & problem solving, teamwork, hard work, dan eager to learn new things."
+  },
+  {
+    "id": "tech-stack",
+    "title": "Bahasa Pemrograman, Framework, dan Tools",
+    "content": "Bahasa pemrograman: TypeScript, JavaScript, Dart, Python. Framework/library: React.js, Next.js, Tailwind CSS, React Native, Flutter. Tools & platform lain: Unity (game engine), GitHub, VS Code, Android Studio, Jira (manajemen proyek dan issue tracking). Billy juga punya basic database management (SQL, PostgreSQL), GitHub basic, dan UI/UX awareness menggunakan Figma."
+  },
+  {
+    "id": "pengalaman-seeds",
+    "title": "Pengalaman Kerja: Front-End Developer & QA di Seeds Finance",
+    "content": "Periode Januari-April 2026, Billy berperan sebagai Front-End Developer and Quality Assurance (Manual) untuk Seeds Finance, meliputi website dan aplikasi mobile. Ia membuat revamp untuk aplikasi perusahaan, serta meningkatkan kualitas website dan aplikasi melalui proses debugging yang teliti dan perbaikan isu teknis (bug fixing). Tanggung jawabnya mencakup identifikasi, analisis, dan penyelesaian bug pada fitur-fitur krusial untuk memastikan stabilitas sistem, kompatibilitas lintas peramban (cross-browser), dan pengalaman pengguna yang mulus."
+  },
+  {
+    "id": "project-rancar",
+    "title": "Project: RanCar",
+    "content": "RanCar adalah aplikasi Front-End Dev untuk tugas akhir (final project), periode September-Desember 2025, dengan tagline 'Hindari macet, cek kondisi jalan lewat Rancar'. Billy berperan sebagai Front-End Developer & UI Designer, bertanggung jawab merancang antarmuka pengguna serta mengembangkan fitur peta interaktif yang menampilkan laporan kemacetan dan kondisi jalan secara real-time. Ia mengimplementasikan desain UI/UX menjadi antarmuka website yang responsif dan presisi menggunakan React.js, serta mengintegrasikan Leaflet API untuk fitur peta interaktif dan visualisasi data lokasi real-time."
+  },
+  {
+    "id": "project-disavowed",
+    "title": "Project: Disavowed (Game)",
+    "content": "Disavowed adalah game bergenre horor/mencekam, tugas akhir periode September-Desember 2025 kategori Level Designer Game and Quality Control. Billy berperan sebagai Sound Designer, bertanggung jawab mencari dan menyusun sound effect serta ambience untuk menciptakan suasana mencekam dan imersif. Ia juga merancang tata letak lingkungan permainan (level layout) dengan menyusun dan mengelola aset visual di dalam Unity Game Engine, membangun atmosfer permainan yang imersif melalui pemilihan efek suara latar dan musik latar (BGM), serta memastikan tidak ada bug pada fitur-fitur dalam game."
+  },
+  {
+    "id": "project-translink",
+    "title": "Project: TransLink",
+    "content": "TransLink adalah proyek tugas akhir yang berfokus pada tahap prototyping untuk rancangan aplikasi integrasi transportasi publik di Jakarta, mencakup KRL, TransJakarta, MRT, LRT, hingga JakLingko. Proyek purwarupa ini dirancang untuk menjawab tantangan mobilitas komuter dengan menyajikan antarmuka yang memfasilitasi kelancaran perpindahan antarmoda. Fokus utama pengembangan berada pada riset pengalaman pengguna (UX) dan visualisasi antarmuka (UI), memastikan alur informasi rute dan jadwal antar-transportasi dapat diakses secara terpusat dan intuitif."
+  },
+  {
+    "id": "project-cinephile-zone",
+    "title": "Project: Cinephile Zone",
+    "content": "Cinephile Zone adalah aplikasi katalog film berbasis mobile yang dikembangkan menggunakan framework Flutter, sebagai bagian dari tugas akhir. Proyek ini dirancang untuk menampilkan daftar film beserta detail spesifiknya dengan memanfaatkan struktur data statis (mock data). Pengembangan aplikasi ini menyoroti pemahaman Billy dalam mengimplementasikan fundamental navigasi, layouting yang responsif, serta menerjemahkan desain ke dalam kode (UI slicing) yang efisien dan rapi."
+  },
+  {
+    "id": "project-ai-apple",
+    "title": "Project: AI Apple (Deteksi Penyakit Daun Apel)",
+    "content": "Project AI Apple adalah aplikasi web sederhana untuk deteksi penyakit daun apel dan rekomendasi penanganan, dibuat untuk petani apel. Menggunakan total 3000 dataset untuk memprediksi status apel (baik atau buruk) dengan model Computer Vision (CNN) dan pendekatan Expert System untuk rekomendasi penanganan otomatis. Dibangun dengan bahasa pemrograman Python dan di-deploy menggunakan Streamlit. Link demo: https://uas-ai03-kelompok1.streamlit.app/."
   },
   {
     "id": "project-ml-uas",
     "title": "Project: Machine Learning Final Project (ml_uas)",
-    "content": "Project tugas akhir menggunakan XGBoost dan FVOA (feature/hyperparameter optimization) di enam dataset: Heart Failure Prediction, Loan Approval, Telco Customer Churn, Airline Passenger Satisfaction, Water Quality, dan American Bankruptcy. Kode dikonversi dari script Python lokal menjadi satu notebook Google Colab (UAS_ML_XGBoost_FVOA.ipynb) dengan plot inline dan data dari GitHub. Repo: Big-com18/ml_uas."
+    "content": "Project machine learning menggunakan XGBoost dan FVOA (feature/hyperparameter optimization) di enam dataset: Heart Failure Prediction, Loan Approval, Telco Customer Churn, Airline Passenger Satisfaction, Water Quality, dan American Bankruptcy. Kode dikonversi dari script Python lokal menjadi satu notebook Google Colab (UAS_ML_XGBoost_FVOA.ipynb) dengan plot inline dan data dari GitHub. Repo: Big-com18/ml_uas."
   },
   {
     "id": "project-mie-gacoan",
@@ -16,17 +71,12 @@
   },
   {
     "id": "project-portfolio-web",
-    "title": "Project: Portfolio Website",
-    "content": "Website portofolio pribadi dibangun dengan Next.js/React. Salah satu tantangan teknis yang diselesaikan adalah bug scrollspy/navbar highlighting, yang awalnya pakai IntersectionObserver lalu diganti ke scroll event listener dengan requestAnimationFrame throttling untuk performa lebih baik."
+    "title": "Project: Website Portofolio Pribadi",
+    "content": "Website portofolio pribadi Billy dibangun dengan Next.js, TypeScript, dan Tailwind CSS, bisa diakses di https://porto-billy.vercel.app/. Salah satu tantangan teknis yang diselesaikan adalah bug scrollspy/navbar highlighting, yang awalnya pakai IntersectionObserver lalu diganti ke scroll event listener dengan requestAnimationFrame throttling untuk performa lebih baik."
   },
   {
     "id": "project-stock-data",
-    "title": "Project: Stock Ownership Data App (in progress)",
-    "content": "Sedang eksplorasi pengembangan aplikasi data kepemilikan saham, meneliti sumber data untuk pasar Indonesia (IDX) dan Amerika (US), termasuk data broker-level, KSEI, keterbukaan informasi OJK, SEC EDGAR, dan API pihak ketiga."
-  },
-  {
-    "id": "skills",
-    "title": "Skills",
-    "content": "Flutter (mobile), Next.js/React (web), Python untuk machine learning (XGBoost, hyperparameter optimization), Google Colab, Git/GitHub, serta ketertarikan pada data dan aplikasi finansial."
+    "title": "Project: Stock Ownership Data App (eksplorasi)",
+    "content": "Billy sedang eksplorasi pengembangan aplikasi data kepemilikan saham, meneliti sumber data untuk pasar Indonesia (IDX) dan Amerika (US), termasuk data broker-level, KSEI, keterbukaan informasi OJK, SEC EDGAR, dan API pihak ketiga."
   }
 ]

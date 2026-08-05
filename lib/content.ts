@@ -3,7 +3,7 @@
 
 export const profile = {
   name: "Billy Andreas",
-  role: "Mahasiswa & Front-End Developer",
+  role: "Mahasiswa , Front-End Developer and Quality Assurance (QA)",
   tagline: "Coding with passion & precision.",
   intro:
     "Seorang mahasiswa yang bersemangat dalam dunia pengembangan perangkat lunak dan teknologi web.",

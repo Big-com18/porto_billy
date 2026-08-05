@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -21,7 +22,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Billy Andreas — Portfolio",
+  title: "Billy Andreas - Portfolio",
   description:
     "Mahasiswa Ilmu Komputer & Front-End Developer. Portofolio proyek, keahlian, dan sertifikat.",
 };
@@ -37,6 +38,7 @@ export default function RootLayout({
         className={`${display.variable} ${body.variable} ${mono.variable} font-body bg-ink text-paper antialiased`}
       >
         {children}
+        <ChatWidget />
       </body>
     </html>
   );
