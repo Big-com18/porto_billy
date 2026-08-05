@@ -42,35 +42,60 @@ export default function ChatWidget() {
   }
 
   return (
-    <div style={{ position: "fixed", bottom: 20, right: 20, zIndex: 50 }}>
+    <div style={{ position: "fixed", bottom: 20, right: 20, zIndex: 9999 }}>
       {open ? (
         <div
           style={{
             width: 320,
             height: 420,
-            background: "#fff",
+            backgroundColor: "rgb(255, 255, 255)",
+            opacity: 1,
             borderRadius: 12,
-            boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
+            boxShadow: "0 8px 30px rgba(0,0,0,0.35)",
             display: "flex",
             flexDirection: "column",
             overflow: "hidden",
+            border: "1px solid rgb(230,230,230)",
           }}
         >
-          <div style={{ padding: "12px 16px", background: "#111", color: "#fff", display: "flex", justifyContent: "space-between" }}>
+          <div
+            style={{
+              padding: "12px 16px",
+              backgroundColor: "rgb(17, 17, 17)",
+              color: "rgb(255,255,255)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             <span>Tanya tentang Billy</span>
-            <button onClick={() => setOpen(false)} style={{ background: "none", border: "none", color: "#fff", cursor: "pointer" }}>
+            <button
+              onClick={() => setOpen(false)}
+              style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", fontSize: 16 }}
+            >
               ✕
             </button>
           </div>
 
-          <div ref={scrollRef} style={{ flex: 1, padding: 12, overflowY: "auto", display: "flex", flexDirection: "column", gap: 8 }}>
+          <div
+            ref={scrollRef}
+            style={{
+              flex: 1,
+              padding: 12,
+              overflowY: "auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+              backgroundColor: "rgb(255,255,255)",
+            }}
+          >
             {messages.map((m, i) => (
               <div
                 key={i}
                 style={{
                   alignSelf: m.role === "user" ? "flex-end" : "flex-start",
-                  background: m.role === "user" ? "#111" : "#f1f1f1",
-                  color: m.role === "user" ? "#fff" : "#111",
+                  backgroundColor: m.role === "user" ? "rgb(17,17,17)" : "rgb(241,241,241)",
+                  color: m.role === "user" ? "rgb(255,255,255)" : "rgb(17,17,17)",
                   padding: "8px 12px",
                   borderRadius: 10,
                   maxWidth: "80%",
@@ -80,18 +105,33 @@ export default function ChatWidget() {
                 {m.text}
               </div>
             ))}
-            {loading && <div style={{ fontSize: 13, color: "#888" }}>Mengetik...</div>}
+            {loading && <div style={{ fontSize: 13, color: "rgb(136,136,136)" }}>Mengetik...</div>}
           </div>
 
-          <div style={{ display: "flex", borderTop: "1px solid #eee" }}>
+          <div style={{ display: "flex", borderTop: "1px solid rgb(238,238,238)", backgroundColor: "rgb(255,255,255)" }}>
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               placeholder="Ketik pertanyaan..."
-              style={{ flex: 1, border: "none", padding: 10, fontSize: 14, outline: "none" }}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
+              style={{
+                flex: 1,
+                border: "none",
+                padding: 10,
+                fontSize: 14,
+                outline: "none",
+                backgroundColor: "rgb(255,255,255)",
+                color: "rgb(17,17,17)",
+              }}
             />
-            <button onClick={sendMessage} style={{ padding: "0 16px", background: "#111", color: "#fff", border: "none", cursor: "pointer" }}>
+            <button
+              onClick={sendMessage}
+              style={{ padding: "0 16px", backgroundColor: "rgb(17,17,17)", color: "rgb(255,255,255)", border: "none", cursor: "pointer" }}
+            >
               Kirim
             </button>
           </div>
@@ -103,8 +143,8 @@ export default function ChatWidget() {
             width: 56,
             height: 56,
             borderRadius: "50%",
-            background: "#111",
-            color: "#fff",
+            backgroundColor: "rgb(17,17,17)",
+            color: "rgb(255,255,255)",
             border: "none",
             fontSize: 20,
             cursor: "pointer",

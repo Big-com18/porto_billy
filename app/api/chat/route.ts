@@ -26,7 +26,7 @@ function cosineSimilarity(a: number[], b: number[]) {
 
 async function embedQuery(text: string): Promise<number[]> {
   const res = await fetch(
-    `https://api-inference.huggingface.co/pipeline/feature-extraction/${HF_MODEL}`,
+    `https://router.huggingface.co/hf-inference/models/${HF_MODEL}/pipeline/feature-extraction`,
     {
       method: "POST",
       headers: {
@@ -106,6 +106,16 @@ export async function POST(request: NextRequest) {
 
     const groqData = await groqRes.json();
     const answer = groqData.choices?.[0]?.message?.content ?? "Maaf, tidak ada jawaban.";
+
+    // 4. Kirim log ke Google Sheet (jangan sampai gagal log menghentikan response ke user)
+    const SHEET_WEBHOOK_URL = process.env.SHEET_WEBHOOK_URL;
+    if (SHEET_WEBHOOK_URL) {
+      fetch(SHEET_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question, answer }),
+      }).catch((err) => console.error("Gagal kirim log ke sheet:", err));
+    }
 
     return Response.json({ answer });
   } catch (err) {

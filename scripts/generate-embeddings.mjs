@@ -17,7 +17,7 @@ if (!HF_API_KEY) {
 
 async function embed(text) {
   const res = await fetch(
-    `https://api-inference.huggingface.co/pipeline/feature-extraction/${MODEL}`,
+    `https://router.huggingface.co/hf-inference/models/${MODEL}/pipeline/feature-extraction`,
     {
       method: "POST",
       headers: {
