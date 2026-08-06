@@ -78,5 +78,20 @@
     "id": "project-stock-data",
     "title": "Project: Stock Ownership Data App (eksplorasi)",
     "content": "Billy sedang eksplorasi pengembangan aplikasi data kepemilikan saham, meneliti sumber data untuk pasar Indonesia (IDX) dan Amerika (US), termasuk data broker-level, KSEI, keterbukaan informasi OJK, SEC EDGAR, dan API pihak ketiga."
+  },
+  {
+    "id": "billy-sifat",
+    "title": "Sifat Detail",
+    "content": "Billy dikenal sebagai individu yang teliti, bertanggung jawab, dan memiliki semangat belajar yang tinggi. Ia mampu bekerja sama secara efektif dalam tim dan selalu berusaha memberikan kontribusi terbaik dalam setiap proyek yang diambil."
+  },
+  {
+    "id": "billy-hobi",
+    "title": "Hobi dan Minat",
+    "content": "Selain fokus pada pengembangan web dan QA, Billy memiliki minat dalam eksplorasi teknologi baru, pengembangan game, serta membaca literatur terkait ilmu komputer dan teknologi. Ia juga menikmati kegiatan kreatif seperti desain grafis dan musik."
+  },
+  {
+    "id": "billy-lokasi",
+    "title": "Lokasi",
+    "content": "Billy tinggal di Jakarta Barat, Tepatnya dijakarta barat dan siap untuk bekerja secara remote maupun on-site."
   }
 ]

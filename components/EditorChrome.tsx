@@ -150,7 +150,7 @@ export default function EditorChrome({
               Explorer
             </p>
             <p className="mb-2 flex items-center gap-1.5 font-mono text-xs text-paper/90">
-              <span className="text-amber">▾</span> CV_BILLY
+              <span className="text-amber">▾</span> Porto_Billy
             </p>
             <ul className="ml-3 border-l border-rule pl-3">
               {FILES.map((f) => {
