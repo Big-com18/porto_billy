@@ -143,14 +143,28 @@ export default function EditorChrome({
       <div className="flex flex-1">
         {/* sidebar: file explorer */}
         <aside
-          className={`fixed inset-y-0 left-0 z-30 w-64 shrink-0 transform overflow-y-auto border-r border-rule bg-panel pt-[49px] transition-transform duration-200 sm:sticky sm:top-[49px] sm:h-[calc(100vh-49px)] sm:translate-x-0 sm:pt-0`}
+          className={`fixed inset-y-0 left-0 z-30 w-64 shrink-0 transform overflow-y-auto border-r border-rule bg-panel pt-[49px] transition-transform duration-200 sm:sticky sm:top-[49px] sm:h-[calc(100vh-49px)] sm:translate-x-0 sm:pt-0 ${
+            sidebarOpen ? "translate-x-0" : "-translate-x-full sm:translate-x-0"
+          }`}
         >
+          <div className="flex items-center justify-between px-4 pt-4 sm:hidden">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+              Explorer
+            </span>
+            <button
+              onClick={() => setSidebarOpen(false)}
+              aria-label="Tutup navigasi"
+              className="grid h-7 w-7 place-items-center text-paper/80"
+            >
+              ✕
+            </button>
+          </div>
           <div className="px-4 py-5">
-            <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+            <p className="mb-3 hidden font-mono text-[11px] uppercase tracking-[0.18em] text-muted sm:block">
               Explorer
             </p>
             <p className="mb-2 flex items-center gap-1.5 font-mono text-xs text-paper/90">
-              <span className="text-amber">▾</span> Porto_Billy
+              <span className="text-amber">▾</span> CV_BILLY
             </p>
             <ul className="ml-3 border-l border-rule pl-3">
               {FILES.map((f) => {
