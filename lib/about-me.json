@@ -93,5 +93,30 @@
     "id": "billy-lokasi",
     "title": "Lokasi",
     "content": "Billy tinggal di Jakarta Barat, Tepatnya dijakarta barat dan siap untuk bekerja secara remote maupun on-site."
+  },
+  {
+    "id": "billy-social-media",
+    "title": "Media Sosial",
+    "content": "Billy aktif di berbagai platform media sosial untuk berbagi pengetahuan dan pengalaman terkait pengembangan web, QA, dan teknologi. Ia dapat dihubungi melalui LinkedIn, Instagram, dan email untuk kolaborasi atau pertanyaan terkait proyek."
+  },
+  {
+    "id": "billy-instagram",
+    "title": "Instagram",
+    "content": "Billy memiliki akun Instagram dengan username @bill.and18."
+  },
+  {
+    "id": "billy-linkedin",
+    "title": "LinkedIn",
+    "content": "Billy memiliki akun LinkedIn yang dapat diakses di www.linkedin.com/in/bill-and"
+  },
+  {
+    "id": "billy-github",
+    "title": "GitHub",
+    "content": "Billy memiliki akun GitHub yang dapat diakses di https://github.com/Big-com18"
+  },
+  {
+    "id": "billy-email",
+    "title": "Email",
+    "content": "Billy dapat dihubungi melalui email di billy.andreas441@gmail.com"
   }
 ]
