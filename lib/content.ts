@@ -31,8 +31,8 @@ export const education = [
 ];
 
 export const skills = {
-  "Bahasa Pemrograman": ["JavaScript", "HTML5", "CSS3", "C++"],
-  "Frameworks & Libraries": ["React.js", "Tailwind CSS", "Next.js"],
+  "Bahasa Pemrograman": ["JavaScript", "HTML5", "CSS3", "C++", "Python", "Flutter"],
+  "Frameworks & Libraries": ["React.js", "Tailwind CSS", "Next.js", "Dart"],
   "Tools & Others": ["Git & GitHub", "Figma", "VS Code", "SQL Management Studio", "Jira"],
 };
 
@@ -138,4 +138,24 @@ export const contacts = [
   { label: "LinkedIn", value: "bill-and", href: "https://www.linkedin.com/in/bill-and/" },
   { label: "GitHub", value: "Big-com18", href: "https://github.com/Big-com18" },
   { label: "Instagram", value: "bill.and18", href: "https://www.instagram.com/bill.and18/" },
+];
+
+// Tambahkan type & array ini ke lib/content.ts, sejajar dengan `projects`
+
+export type AnalisisItem = {
+  id: string;
+  title: string;
+  desc: string;
+  tools: string[];
+  link?: string; // opsional: link ke PDF laporan / drive, kosongkan kalau tidak ada
+};
+
+export const analisis: AnalisisItem[] = [
+  {
+    id: "dwh-transjakarta",
+    title: "Data Warehouse Transportasi Publik Jakarta (MRT & Transjakarta)",
+    desc: "Merancang star schema dan pipeline ETL untuk data MRT dan Transjakarta: menarik data mentah, membangun fact & dimension table, lalu memuatnya ke data warehouse untuk kebutuhan analisis. Tugas besar mata kuliah Data Warehouse, dikerjakan berkelompok dan tidak dipublikasikan sebagai repo publik.",
+    tools: ["Python", "Jupyter Notebook", "SQL", "SQLite", "Star Schema"],
+    // link: "https://drive.google.com/..." // isi kalau mau lampirkan laporan
+  },
 ];
