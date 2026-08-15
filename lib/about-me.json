@@ -118,5 +118,16 @@
     "id": "billy-email",
     "title": "Email",
     "content": "Billy dapat dihubungi melalui email di billy.andreas441@gmail.com"
+  },
+  {
+    "id": "halo-greetings",
+    "title": "haloo",
+    "content": "Halo! Saya Billy, seorang pengembang web dan QA yang bersemangat. Saya senang bisa berkolaborasi dengan Anda!"
+  },
+  {
+    "id": "halo-greetings",
+    "title": "haloo",
+    "content": "Halo selamat datang di porto Billy! Silahkan tanya-tanya aja tentang Billy, project, atau skill-nya"
   }
+
 ]
