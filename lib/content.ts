@@ -9,7 +9,7 @@ export const profile = {
     "Seorang mahasiswa yang bersemangat dalam dunia pengembangan perangkat lunak dan teknologi web.",
   bio: "Saya suka mempelajari hal-hal baru, terutama di bidang web development, database system, software engineering, dan quality assurance (QA). Saya memiliki minat untuk mengembangkan aplikasi yang efisien, fungsional, dan mudah digunakan, serta terus meningkatkan keterampilan teknis saya melalui pembelajaran dan praktik langsung.",
   cvUrl:
-    "https://drive.google.com/file/d/13XBgbxpgE4yOTrhh2pJWrQQsWYKQMgUy/view?usp=sharing",
+    "https://drive.google.com/file/d/1g44rWhfgDm6HhUXk1_5_3QlCb2bcyrtC/view?usp=sharing",
   photo: "/images/foto-billy.jpg",
 };
 
@@ -29,12 +29,6 @@ export const education = [
       "Pada masa SMA, saya aktif dalam organisasi seperti Rohkris. Saya juga masuk eligible 28 dari satu sekolah.",
   },
 ];
-
-export const skills = {
-  "Bahasa Pemrograman": ["JavaScript", "HTML5", "CSS3", "C++", "Python", "Flutter"],
-  "Frameworks & Libraries": ["React.js", "Tailwind CSS", "Next.js", "Dart"],
-  "Tools & Others": ["Git & GitHub", "Figma", "VS Code", "SQL Management Studio", "Jira"],
-};
 
 export const projects = [
   {
@@ -159,3 +153,37 @@ export const analisis: AnalisisItem[] = [
     // link: "https://drive.google.com/..." // isi kalau mau lampirkan laporan
   },
 ];
+
+// Tambahkan type ini di dekat type AnalisisItem
+export type SkillItem = {
+  name: string;
+  icon?: string;   // slug dari skillicons.dev -> lihat daftar di https://skillicons.dev
+  image?: string;  // path lokal kalau logonya nggak ada di skillicons.dev
+};
+
+export const skills: Record<string, SkillItem[]> = {
+  "Bahasa Pemrograman": [
+    { name: "JavaScript", icon: "js" },
+    { name: "HTML5", icon: "html" },
+    { name: "CSS3", icon: "css" },
+    { name: "C++", icon: "cpp" },
+    { name: "Python", icon: "py" },
+    { name: "Flutter", icon: "flutter" },
+  ],
+  "Frameworks & Libraries": [
+    { name: "React.js", icon: "react" },
+    { name: "Tailwind CSS", icon: "tailwind" },
+    { name: "Next.js", icon: "nextjs" },
+    { name: "Dart", icon: "dart" },
+  ],
+  "Tools & Others": [
+    { name: "Git", icon: "git" },
+    { name: "GitHub", icon: "github" },
+    { name: "Figma", icon: "figma" },
+    { name: "VS Code", icon: "vscode" },
+    { name: "SQL Management Studio", image: "images/sql.png" },
+    { name: "Jira", image: "images/jira.png" },
+    { name: "Laragon", image: "images/laragon.png" },
+    { name: "Android Studio", icon: "androidstudio" },
+  ],
+};
