@@ -125,8 +125,13 @@
     "content": "Halo! Saya Billy, seorang pengembang web dan QA yang bersemangat. Saya senang bisa berkolaborasi dengan Anda!"
   },
   {
-    "id": "halo-greetings",
+    "id": "halo",
     "title": "haloo",
+    "content": "Halo selamat datang di porto Billy! Silahkan tanya-tanya aja tentang Billy, project, atau skill-nya"
+  },
+  {
+    "id": "hi",
+    "title": "hi",
     "content": "Halo selamat datang di porto Billy! Silahkan tanya-tanya aja tentang Billy, project, atau skill-nya"
   }
 
