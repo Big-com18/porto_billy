@@ -15,6 +15,7 @@ const FILES: FileEntry[] = [
   { id: "pendidikan", name: "Pendidikan", ext: "tsx" },
   { id: "keahlian", name: "Keahlian", ext: "json" },
   { id: "project", name: "Project", ext: "tsx" },
+  { id: "analisis", name: "Analisis", ext: "tsx" },
   { id: "sertifikat", name: "Sertifikat", ext: "tsx" },
   {
     id: "postingan",
