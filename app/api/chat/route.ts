@@ -5,7 +5,7 @@ import { NextRequest } from "next/server";
 const HF_API_KEY = process.env.HF_API_KEY;
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const HF_MODEL = "sentence-transformers/all-MiniLM-L6-v2";
-const GROQ_MODEL = "llama-3.3-70b-versatile"; // cek groq.com/docs buat model terbaru
+const GROQ_MODEL = "openai/gpt-oss-120b"; // llama-3.3-70b-versatile sudah deprecated per Agustus 2026
 
 type Entry = {
   id: string;
