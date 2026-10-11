@@ -61,21 +61,28 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: "Pertanyaan kosong." }, { status: 400 });
     }
 
-    // 1. Embed pertanyaan user
-    const queryVector = await embedQuery(question);
-
-    // 2. Cari chunk paling relevan (top 3)
     const entries = loadEmbeddings();
-    const scored = entries
-      .map((e) => ({ ...e, score: cosineSimilarity(queryVector, e.vector) }))
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3);
 
-    const context = scored
+    // 1 & 2. Coba cari entry paling relevan lewat Hugging Face (top 4).
+    // Kalau Hugging Face gagal (kuota habis / error lain), jangan matikan chatbot:
+    // langsung pakai SEMUA entry sebagai konteks. Datanya kecil, jadi muat di prompt.
+    let selected: Entry[];
+    try {
+      const queryVector = await embedQuery(question);
+      selected = entries
+        .map((e) => ({ ...e, score: cosineSimilarity(queryVector, e.vector) }))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 4);
+    } catch (err) {
+      console.error("Embedding gagal, pakai semua entry sebagai konteks:", err);
+      selected = entries;
+    }
+
+    const context = selected
       .map((e) => `## ${e.title}\n${e.content}`)
       .join("\n\n");
 
-    // 3. Kirim ke Groq dengan context yang relevan
+    // 3. Kirim ke Groq dengan context
     const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -88,7 +95,7 @@ export async function POST(request: NextRequest) {
           {
             role: "system",
             content:
-              "Kamu adalah asisten AI di website portofolio Billy. Jawab pertanyaan pengunjung HANYA berdasarkan konteks yang diberikan tentang Billy. Jika informasi tidak ada di konteks, katakan kamu tidak punya info itu. Jawab singkat, ramah, dan dalam Bahasa Indonesia kecuali ditanya dalam bahasa lain.",
+              "Kamu adalah asisten AI di website portofolio Billy. Jawab pertanyaan pengunjung HANYA berdasarkan konteks yang diberikan tentang Billy. Jika informasi tidak ada di konteks, katakan kamu tidak punya info itu. Jawab singkat, ramah, dan dalam Bahasa Indonesia kecuali ditanya dalam bahasa lain. PENTING: Jangan gunakan format markdown apapun (jangan pakai tanda bintang **, tanda pagar #, atau tanda strip - untuk bullet list). Tulis jawaban dalam paragraf biasa yang mengalir natural, seperti sedang mengetik pesan chat biasa.",
           },
           {
             role: "user",
@@ -107,14 +114,20 @@ export async function POST(request: NextRequest) {
     const groqData = await groqRes.json();
     const answer = groqData.choices?.[0]?.message?.content ?? "Maaf, tidak ada jawaban.";
 
-    // 4. Kirim log ke Google Sheet (jangan sampai gagal log menghentikan response ke user)
+    // 4. Kirim log ke Google Sheet.
+    // Pakai await supaya di Vercel (serverless) request log nggak keburu terputus
+    // begitu response dikirim. Kalau gagal, cukup dicatat, user tetap dapat jawaban.
     const SHEET_WEBHOOK_URL = process.env.SHEET_WEBHOOK_URL;
     if (SHEET_WEBHOOK_URL) {
-      fetch(SHEET_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, answer }),
-      }).catch((err) => console.error("Gagal kirim log ke sheet:", err));
+      try {
+        await fetch(SHEET_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question, answer }),
+        });
+      } catch (err) {
+        console.error("Gagal kirim log ke sheet:", err);
+      }
     }
 
     return Response.json({ answer });

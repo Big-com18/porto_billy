@@ -4,6 +4,15 @@ import { useState, useRef, useEffect } from "react";
 
 type Message = { role: "user" | "assistant"; text: string };
 
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, "$1") // **bold**
+    .replace(/\*(.*?)\*/g, "$1") // *italic*
+    .replace(/^#{1,6}\s+/gm, "") // # heading
+    .replace(/^-\s+/gm, "• ") // - bullet jadi •
+    .replace(/^\d+\.\s+/gm, ""); // 1. numbered list
+}
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -46,8 +55,8 @@ export default function ChatWidget() {
       {open ? (
         <div
           style={{
-            width: 320,
-            height: 420,
+            width: "min(320px, calc(100vw - 32px))",
+            height: "min(420px, 70vh)",
             backgroundColor: "rgb(255, 255, 255)",
             opacity: 1,
             borderRadius: 12,
@@ -102,7 +111,7 @@ export default function ChatWidget() {
                   fontSize: 14,
                 }}
               >
-                {m.text}
+                {m.role === "assistant" ? stripMarkdown(m.text) : m.text}
               </div>
             ))}
             {loading && <div style={{ fontSize: 13, color: "rgb(136,136,136)" }}>Mengetik...</div>}
