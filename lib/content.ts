@@ -93,6 +93,25 @@ export const projects = [
     image: "/images/appel.png",
     link: "https://uas-ai03-kelompok1.streamlit.app/",
   },
+  {
+    id: "Backlogify ",
+    title: "Backlogify adalah dashboard analitik dan decision engine berbasis Streamlit untuk mengelola backlog game.",
+    role: "Backend",
+    desc:
+      "Tugas saya disini untuk menghubungkan antara backend dan frontend, serta mengelola data yang masuk ke dalam dashboard.",
+    image: "/images/Backlogify.png",
+    link: "https://backlogify.streamlit.app/",
+  },
+  {
+    id: "Kasbonku",
+    title: "Kasbonku adalah aplikasi manajemen kas untuk kelompok tani",
+    role: "Back-End",
+    desc:
+      "Mengembangkan backend aplikasi dan mendesain schema untuk databasenya",
+    image: "/images/KasbonKu.png",
+    link: "https://sistem-kasbon.vercel.app/",
+  },
+
 ];
 
 export const certificates = [
@@ -129,7 +148,7 @@ export const certificates = [
 
 export const contacts = [
   { label: "Email", value: "billyandreas441@gmail.com", href: "mailto:billyandreas441@gmail.com" },
-  { label: "LinkedIn", value: "bill-and", href: "https://www.linkedin.com/in/bill-and/" },
+  { label: "LinkedIn", value: "bill-and", href: "www.linkedin.com/in/billy-andre" },
   { label: "GitHub", value: "Big-com18", href: "https://github.com/Big-com18" },
   { label: "Instagram", value: "bill.and18", href: "https://www.instagram.com/bill.and18/" },
 ];
