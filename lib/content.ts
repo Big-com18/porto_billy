@@ -42,7 +42,25 @@ export type ProjectItem = {
   featured?: boolean; // project andalan (tampil besar di atas)
 };
 
+/**
+ * Daftar project = sama dengan daftar Showcase di website magang (5 unggulan dulu, lalu repo lainnya).
+ * `image` kosong / file belum ada -> otomatis tampil placeholder, jadi aman diisi belakangan:
+ * taruh screenshot di /public/images lalu samakan nama file-nya.
+ */
 export const projects: ProjectItem[] = [
+  // ===== Unggulan =====
+  {
+    id: "portofolio",
+    title: "Portofolio",
+    role: "Front-End",
+    desc:
+      "Website portofolio pribadi yang sedang kamu lihat ini, dibangun dengan Next.js, TypeScript, dan Tailwind CSS.",
+    image: "/images/portofolio.png",
+    link: "https://porto-billy.vercel.app/",
+    github: "https://github.com/Big-com18/porto_billy",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    featured: true,
+  },
   {
     id: "kasbonku",
     title: "KasbonKu",
@@ -51,6 +69,7 @@ export const projects: ProjectItem[] = [
       "Aplikasi manajemen kas untuk kelompok tani. Saya mengembangkan backend-nya dan mendesain schema database untuk mencatat kasbon dan arus kas secara terstruktur.",
     image: "/images/KasbonKu.png",
     link: "https://sistem-kasbon.vercel.app/",
+    github: "https://github.com/Big-com18/sistem-kasbon",
     tags: ["Back-End", "Database Design", "Vercel"],
     featured: true,
   },
@@ -63,7 +82,101 @@ export const projects: ProjectItem[] = [
     image: "/images/Backlogify.png",
     link: "https://backlogify.streamlit.app/",
     tags: ["Python", "Streamlit", "Data Analytics"],
+    featured: true,
   },
+  {
+    id: "game",
+    title: "Game",
+    role: "Sound & Assets",
+    desc: "Game kecil berbasis JavaScript.",
+    image: "/images/game.png",
+    link: "https://vntrydev.itch.io/disavowed",
+    github: "https://github.com/Big-com18/game",
+    tags: ["Unity", "Game"],
+    featured: true,
+  },
+  {
+    id: "mahreen-indonesia",
+    title: "Mahreen Indonesia",
+    role: "TypeScript",
+    desc: "Project website Mahreen Indonesia berbasis TypeScript.",
+    image: "/images/mahreen-indonesia.png",
+    link: "https://mahreen-indonesia-eight.vercel.app/",
+    github: "https://github.com/Big-com18/mahreen_indonesia",
+    tags: ["TypeScript"],
+    featured: true,
+  },
+
+  // ===== Repo lainnya =====
+  {
+    id: "pos-toko",
+    title: "POS Toko",
+    role: "TypeScript",
+    desc: "Project sistem kasir (point of sale) untuk toko, berbasis TypeScript.",
+    image: "/images/pos-toko.png",
+    link: "",
+    github: "https://github.com/Big-com18/pos_toko",
+    tags: ["TypeScript"],
+  },
+  {
+    id: "lost-found",
+    title: "UAS SDLC — Lost & Found",
+    role: "JavaScript",
+    desc: "Project UAS mata kuliah SDLC (Kelompok 2) bertema Lost & Found, dibuat dengan JavaScript.",
+    image: "/images/lost-found.png",
+    link: "",
+    github: "https://github.com/Big-com18/UAS_Sdlc_K2_Lost-Found",
+    tags: ["JavaScript", "SDLC"],
+  },
+  {
+    id: "backend-api",
+    title: "Backend API",
+    role: "Back-End",
+    desc: "Layanan back-end / REST API.",
+    image: "/images/backend-api.png",
+    link: "",
+    github: "https://github.com/Big-com18/backend-api",
+    tags: ["Back-End", "REST API"],
+  },
+  {
+    id: "tugas-sesi5",
+    title: "Tugas Sesi 5",
+    role: "Python",
+    desc: "Tugas mata kuliah sesi 5 yang dikerjakan dengan Python.",
+    image: "/images/tugas-sesi5.png",
+    link: "",
+    github: "https://github.com/Big-com18/tugas_sesi5_sdlf",
+    tags: ["Python"],
+  },
+  {
+    id: "bmi",
+    title: "Website Kalkulator BMI",
+    role: "Fullstack",
+    desc:
+      "Website sederhana penghitung BMI, dibuat sebagai proyek akhir dari kursus yang saya ikuti untuk memperluas pengetahuan.",
+    image: "/images/project-bmi.jpg",
+    link: "https://big-com18.github.io/BMI-project/index.html",
+    github: "https://github.com/Big-com18/BMI-project",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    id: "rancar",
+    title: "RanCar",
+    role: "Front-End & UI Design",
+    desc:
+      "Aplikasi tugas akhir dengan tagline “Hindari macet, cek kondisi jalan lewat Rancar”. Saya merancang antarmuka dan mengembangkan fitur peta interaktif untuk laporan kemacetan dan kondisi jalan.",
+    image: "/images/project-rancar.jpg",
+    link: "", // link lama (Cv_Billy / CV-Home) bukan RanCar, jadi dikosongkan. Isi kalau ada demo-nya.
+    github: "https://github.com/Big-com18/rancar-mobile",
+    tags: ["React.js", "Leaflet", "UI/UX"],
+  },
+];
+
+/**
+ * Project lain yang sebelumnya ada di portofolio ini tapi tidak ada di daftar Showcase magang.
+ * Tidak ditampilkan. Kalau mau dimunculkan lagi, pindahkan ke array `projects` di atas.
+ */
+export const otherProjects: ProjectItem[] = [
   {
     id: "film-booking",
     title: "Aplikasi Booking Film",
@@ -102,27 +215,8 @@ export const projects: ProjectItem[] = [
     desc:
       "Bot WhatsApp berbasis Node.js (Baileys) dengan panel admin untuk mengontrol sistem dan mengelola pesan otomatis.",
     image: "/images/project-botwa.jpg",
-    link: "", // TODO: link sebelumnya sama dengan project BMI, isi dengan link yang benar
+    link: "",
     tags: ["Node.js", "Baileys", "JavaScript"],
-  },
-  {
-    id: "bmi",
-    title: "Website Kalkulator BMI",
-    role: "Fullstack",
-    desc:
-      "Website sederhana penghitung BMI, dibuat sebagai proyek akhir dari kursus yang saya ikuti untuk memperluas pengetahuan.",
-    image: "/images/project-bmi.jpg",
-    link: "https://big-com18.github.io/BMI-project/index.html",
-    tags: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    id: "rancar",
-    title: "Aplikasi Tugas Akhir",
-    role: "Front-End",
-    desc: "Project tugas akhir mata kuliah, dengan fokus pada tampilan front-end.",
-    image: "/images/project-rancar.jpg",
-    link: "https://big-com18.github.io/Cv_Billy/CV-Home/",
-    tags: ["HTML", "CSS", "JavaScript"],
   },
   {
     id: "disavowed",
@@ -191,7 +285,7 @@ export const analisis: AnalisisItem[] = [
     tools: ["Python", "Jupyter Notebook", "SQL", "SQLite", "Star Schema"],
     // link: "https://drive.google.com/..." // isi kalau mau lampirkan laporan
   },
-];
+];  
 
 export type SkillItem = {
   name: string;
@@ -202,26 +296,37 @@ export type SkillItem = {
 export const skills: Record<string, SkillItem[]> = {
   "Bahasa Pemrograman": [
     { name: "JavaScript", icon: "js" },
+    { name: "TypeScript", icon: "ts" },
     { name: "HTML5", icon: "html" },
     { name: "CSS3", icon: "css" },
-    { name: "C++", icon: "cpp" },
     { name: "Python", icon: "py" },
-    { name: "Flutter", icon: "flutter" },
+    { name: "C++", icon: "cpp" },
+    { name: "Dart", icon: "dart" },
+    { name: "SQL", image: "/images/sql.png" },
   ],
   "Frameworks & Libraries": [
-    { name: "React.js", icon: "react" },
-    { name: "Tailwind CSS", icon: "tailwind" },
     { name: "Next.js", icon: "nextjs" },
-    { name: "Dart", icon: "dart" },
+    { name: "React.js", icon: "react" },
+    { name: "Vue.js", icon: "vue" },
+    { name: "Angular", icon: "angular" },
+    { name: "Tailwind CSS", icon: "tailwind" },
+    { name: "Node.js", icon: "nodejs" },
+    { name: ".NET", icon: "dotnet" },
+    { name: "Flutter", icon: "flutter" },
+    { name: "React Native", icon: "react" },
   ],
   "Tools & Others": [
     { name: "Git", icon: "git" },
     { name: "GitHub", icon: "github" },
-    { name: "Figma", icon: "figma" },
     { name: "VS Code", icon: "vscode" },
-    { name: "SQL Management Studio", image: "/images/sql.png" },
+    { name: "Figma", icon: "figma" },
     { name: "Jira", image: "/images/jira.png" },
-    { name: "Laragon", image: "/images/laragon.png" },
     { name: "Android Studio", icon: "androidstudio" },
+    { name: "Laragon", image: "/images/laragon.png" },
+    { name: "SQL Management Studio", image: "/images/sql.png" },
+    { name: "PostgreSQL", icon: "postgres" },
+    { name: "Supabase", icon: "supabase" },
+    { name: "Unity", icon: "unity" },
+    { name: "Vercel", icon: "vercel" },
   ],
 };

@@ -59,6 +59,7 @@ export default function Project() {
   const [running, setRunning] = useState<Record<string, boolean>>({});
   const [loaded, setLoaded] = useState<Record<string, boolean>>({});
   const [reloadKey, setReloadKey] = useState(0);
+  const [imgFail, setImgFail] = useState<Record<string, boolean>>({});
 
   const active = all.find((p) => p.id === activeId) ?? all[0];
   const embedSrc = getEmbedSrc(active?.link);
@@ -219,16 +220,37 @@ export default function Project() {
                   style={{ width: viewW, height: viewH }}
                 >
                   {/* gambar (selalu ada sebagai poster / fallback) */}
-                  {(!embedSrc || !isRunning) && (
-                    <Image
-                      key={active.id}
-                      src={active.image}
-                      alt={active.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 70vw"
-                      className="object-cover object-top"
-                    />
-                  )}
+                  {(!embedSrc || !isRunning) &&
+                    (active.image && !imgFail[active.id] ? (
+                      <Image
+                        key={active.id}
+                        src={active.image}
+                        alt={active.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 70vw"
+                        className="object-cover object-top"
+                        onError={() =>
+                          setImgFail((f) => ({ ...f, [active.id]: true }))
+                        }
+                      />
+                    ) : (
+                      <div
+                        key={`ph-${active.id}`}
+                        className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-panelLight via-panel to-ink px-6 text-center"
+                      >
+                        <span className="font-mono text-[11px] text-muted">
+                          // preview belum tersedia
+                        </span>
+                        <span className="font-display text-2xl font-bold text-paper sm:text-3xl">
+                          {active.title}
+                        </span>
+                        {active.tags && (
+                          <span className="font-mono text-[11px] text-teal">
+                            {active.tags.join(" · ")}
+                          </span>
+                        )}
+                      </div>
+                    ))}
 
                   {/* tombol play */}
                   {embedSrc && !isRunning && (
